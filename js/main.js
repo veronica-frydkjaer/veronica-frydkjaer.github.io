@@ -1,10 +1,29 @@
 const navLinks = Array.from(document.querySelectorAll(".site-nav a"));
 const backToTopLink = document.getElementById("back-to-top");
+const navToggle = document.getElementById("nav-toggle");
+const headerControls = document.querySelector(".header-controls");
 const langEnButton = document.getElementById("lang-en");
 const langDaButton = document.getElementById("lang-da");
 const descriptionMeta = document.querySelector('meta[name="description"]');
 const ogTitleMeta = document.querySelector('meta[property="og:title"]');
 const ogDescriptionMeta = document.querySelector('meta[property="og:description"]');
+
+// Mobile menu toggle
+if (navToggle && headerControls) {
+  navToggle.addEventListener("click", () => {
+    const isOpen = navToggle.getAttribute("aria-expanded") === "true";
+    navToggle.setAttribute("aria-expanded", String(!isOpen));
+    headerControls.classList.toggle("open");
+  });
+
+  // Close menu when a navigation link is clicked
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      navToggle.setAttribute("aria-expanded", "false");
+      headerControls.classList.remove("open");
+    });
+  });
+}
 
 const sectionMap = new Map(
   navLinks

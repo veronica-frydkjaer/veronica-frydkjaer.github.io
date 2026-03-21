@@ -80,6 +80,57 @@ img {
   text-decoration: none;
 }
 
+.nav-toggle {
+  display: none;
+  position: relative;
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.nav-toggle-icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.nav-toggle-icon::before,
+.nav-toggle-icon::after {
+  content: "";
+  position: absolute;
+  background: var(--text);
+  width: 100%;
+  height: 2px;
+  left: 0;
+  transition: transform 200ms ease;
+}
+
+.nav-toggle-icon::before {
+  top: 0.35rem;
+}
+
+.nav-toggle-icon::after {
+  bottom: 0.35rem;
+}
+
+.nav-toggle-icon {
+  background: linear-gradient(to bottom, transparent calc(50% - 1px), var(--text) calc(50% - 1px), var(--text) calc(50% + 1px), transparent calc(50% + 1px));
+  background-size: 100% 100%;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon::before {
+  transform: translateY(0.55rem) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon::after {
+  transform: translateY(-0.55rem) rotate(-45deg);
+}
+
 .header-controls {
   display: flex;
   align-items: center;
@@ -372,18 +423,60 @@ button:focus-visible {
 }
 
 @media (max-width: 720px) {
+  .nav-wrap {
+    gap: 1rem;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
   .header-controls {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(244, 247, 250, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(215, 226, 234, 0.7);
     width: 100%;
-    justify-content: space-between;
+    max-height: 0;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0;
+    transition: max-height 300ms ease;
+  }
+
+  .header-controls.open {
+    max-height: 400px;
+    padding: 0.75rem 0;
   }
 
   .site-nav {
-    gap: 0.2rem;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+    padding: 0 1rem;
+    margin-bottom: 0;
   }
 
   .site-nav a {
-    padding: 0.4rem 0.55rem;
-    font-size: 0.92rem;
+    display: block;
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .site-nav a:hover,
+  .site-nav a:focus-visible,
+  .site-nav a.active {
+    background: var(--surface-soft);
+  }
+
+  .language-switch {
+    margin: 0 1rem 0.5rem 1rem;
+    align-self: flex-start;
   }
 
   .hero {
