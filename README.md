@@ -1,34 +1,54 @@
-# Personal Recruiter Website
+# Veronica Frydkjaer | GRC Professional
 
-Single-page personal website tailored for Governance, Risk, and Compliance recruiting.
+A modern, bilingual resume website showcasing my expertise in **Governance, Risk, and Compliance (GRC)** with focus on ISO frameworks, NIST standards, and practical IT security management.
 
-## Files
+## About Me
 
-- `index.html`: Main page structure and content
-- `styles/main.css`: Visual design and responsive layout
-- `js/main.js`: Small behavior enhancements
-- `images/veronica_frydkjaer_billede.png`: Current profile photo
-- `assets/veronica-frydkjaer-resume-en.pdf`: English resume PDF for download button
-- `assets/veronica-frydkjaer-resume-da.pdf`: Danish resume PDF for download button
+I'm a structured and thorough GRC professional based in Copenhagen, with hands-on experience in risk assessments, compliance gap analysis, and implementation of practical controls. I specialize in written communication, management reporting, and translating technical security work into clear decisions for leadership and cross-functional teams.
 
-## Customize Quickly
+**Education:** BA in IT Security, Copenhagen Business Academy (Aug 2022 - Jan 2026)
 
-1. Update your name, headline, and intro in `index.html`.
-2. Replace `images/veronica_frydkjaer_billede.png` if you want a different headshot.
-3. Replace placeholder experience/projects/education details.
-4. Update email and LinkedIn links in the Contact section.
-5. Add both resume PDFs in `assets/` using these exact names:
-   - `veronica-frydkjaer-resume-en.pdf`
-   - `veronica-frydkjaer-resume-da.pdf`
+**Experience:**
+- Student Worker at The LEGO Group (Compliance & Security)
+- Student Worker at Tech Chapter (DevSecOps Consultancy)
 
-## Run Locally
+**Certifications & Knowledge:** ISO 27001, ISO 27002, ISO 27005, CIS18, NIST 800-53, ISMS, GDPR, threat analysis, risk management.
 
-Open `index.html` in a browser.
+## Features
+
+- **Bilingual Support:** English and Danish (toggle in header)
+- **Responsive Design:** Optimized for desktop, tablet, and mobile
+- **Accessibility:** WCAG compliant with semantic HTML and focus management
+- **Live Navigation:** Active section highlighting as you scroll
+- **Dark Prefers:** Respects system color preferences
+
+## Local Setup
+
+Open `index.html` directly in your browser—no build required.
+
+## File Structure
+
+```
+├── index.html              # Main resume page
+├── styles/main.css         # Responsive design & styling
+├── js/main.js              # Language switching & navigation
+├── images/                 # Profile photo
+└── assets/                 # Resume PDFs (EN/DA)
+```
+
+## Get In Touch
+
+- **Email:** veronica.frydkjaer@outlook.com
+- **Phone:** +45 29 90 05 32
+- **LinkedIn:** [linkedin.com/in/veronica-frydkjaer](https://www.linkedin.com/in/veronica-frydkj%C3%A6r-b2712b274)
+- **GitHub:** [github.com/Rhod1um](https://github.com/Rhod1um)
+- **Location:** Valby, Copenhagen
 
 ## Deploy to GitHub Pages
 
+To publish this site:
+
 1. Create a GitHub repository and push this folder.
-2. In GitHub repo settings, go to Pages.
-3. Set source to `Deploy from a branch`.
-4. Choose `main` branch and `/ (root)` folder.
-5. Save and wait for the published URL.
+2. Go to **Settings** → **Pages**.
+3. Select **Deploy from a branch** as source.
+4. Choose `main` branch and `/ (root)` folder, then save.
