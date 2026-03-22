@@ -23,6 +23,18 @@ if (navToggle && headerControls) {
       headerControls.classList.remove("open");
     });
   });
+
+  // Close menu when clicking outside of it
+  document.addEventListener("click", (event) => {
+    const isOpen = navToggle.getAttribute("aria-expanded") === "true";
+    const isClickInsideMenu = headerControls.contains(event.target);
+    const isClickOnToggle = navToggle.contains(event.target);
+
+    if (isOpen && !isClickInsideMenu && !isClickOnToggle) {
+      navToggle.setAttribute("aria-expanded", "false");
+      headerControls.classList.remove("open");
+    }
+  });
 }
 
 const sectionMap = new Map(
